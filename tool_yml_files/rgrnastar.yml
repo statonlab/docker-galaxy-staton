@@ -1,0 +1,9 @@
+api_key: admin
+galaxy_instance: http://localhost:8080
+tools:
+- name: rgrnastar
+  owner: iuc
+  tool_panel_section_label: "DIBBsTools: Mapping"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  revisions:
+          - "ace9f5a2b40f"

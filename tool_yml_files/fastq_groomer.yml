@@ -1,0 +1,10 @@
+# version: 1.0.4
+api_key: admin
+galaxy_instance: http://localhost:8080
+tools:
+- name: fastq_groomer
+  owner: devteam
+  tool_panel_section_label: "Quality Control"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  revisions:
+          - "e4d28c94242d"

@@ -1,0 +1,20 @@
+<tool id="import_workflows" name="Import workflows from a local directory" version="0.1.0">
+    <requirements>
+    </requirements>
+    <stdio>
+        <exit_code range="1:" />
+    </stdio>
+    <command><![CDATA[
+        python $__tool_directory__/import_workflows.py
+        -p 80
+        -k $key
+    ]]></command>
+    <inputs>
+        <param name="key" type="text" label="User API key"/>
+    </inputs>
+    <outputs>
+    </outputs>
+    <help><![CDATA[
+        TODO: Fill in help.
+    ]]></help>
+</tool>

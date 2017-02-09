@@ -1,0 +1,11 @@
+# version 2.0.3
+# 5 (2016-06-02)
+api_key: admin
+galaxy_instance: http://localhost:8080
+tools:
+- name: hisat2
+  owner: iuc
+  tool_panel_section_label: "DIBBsTools: Mapping"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  revisions:
+          - "1eb21dccc2fa"

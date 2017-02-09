@@ -1,0 +1,11 @@
+# version: 2.0
+# 2 (2015-04-21)
+api_key: admin
+galaxy_instance: http://localhost:8080
+tools:
+- name: samtools_flagstat
+  owner: devteam
+  tool_panel_section_label: "DIBBsTools: Mapping"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  revisions:
+          - "0072bf593791"

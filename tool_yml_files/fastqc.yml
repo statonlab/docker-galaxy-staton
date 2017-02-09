@@ -1,0 +1,11 @@
+# version: 0.65
+# 7 (2016-04-11)
+api_key: admin
+galaxy_instance: http://localhost:8080
+tools:
+- name: fastqc
+  owner: devteam
+  tool_panel_section_label: "Quality Control"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  revisions:
+          - "3fdc1a74d866"

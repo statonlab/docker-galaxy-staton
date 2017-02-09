@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toolbox monitor="true">
+    <section id="getext" name="Get Data">
+        <tool file="data_source/upload.xml" />
+        <tool file="data_source/bdss.xml" />
+    </section>
+    <section id="import_workflows" name="Import Workflows">
+        <tool file="../my_tools/import_workflows/import_workflows.xml" />
+    </section>
+</toolbox>
