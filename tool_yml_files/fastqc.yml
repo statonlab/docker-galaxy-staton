@@ -5,7 +5,7 @@ galaxy_instance: http://localhost:8080
 tools:
 - name: fastqc
   owner: devteam
-  tool_panel_section_label: "Quality Control"
+  tool_panel_section_label: "Galaxy Tools"
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
   revisions:
           - "3fdc1a74d866"

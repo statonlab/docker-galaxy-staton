@@ -5,7 +5,7 @@ galaxy_instance: http://localhost:8080
 tools:
 - name: bowtie2
   owner: devteam
-  tool_panel_section_label: "DIBBsTools: Mapping"
+  tool_panel_section_label: "Galaxy Tools"
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
   revisions:
           - "a9d4f71dbfb0"

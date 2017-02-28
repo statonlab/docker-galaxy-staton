@@ -51,36 +51,79 @@ ADD my_tools/import_workflows/ $GALAXY_ROOT/my_tools/import_workflows/
 RUN pip install bioblend
 
 
-## ////////// install tools from galaxy toolshed /////////////////////
-ADD tool_yml_files/bowtie2.yml $GALAXY_HOME/tool_yml_files/bowtie2.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/bowtie2.yml
+##============ install R-3.2.5 ======================
+##
+##===================================================
+RUN sudo apt-get -y build-dep r-base
+RUN cd /opt && wget https://cran.r-project.org/src/base/R-3/R-3.2.5.tar.gz && \
+    tar xzf R-3.2.5.tar.gz && cd R-3.2.5 && \
+    ./configure --prefix=/opt/R/3.2.5 --enable-R-shlib --with-blas --with-lapack && \
+    make && \
+    sudo make install
 
-ADD tool_yml_filesbwa.yml $GALAXY_HOME/tool_yml_files/bwa.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/bwa.yml
 
-ADD tool_yml_files/fastq_groomer.yml $GALAXY_HOME/tool_yml_files/fastq_groomer.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/fastq_groomer.yml
+# ## ////////// install tools from galaxy toolshed /////////////////////
+# ADD tool_yml_files/bowtie2.yml $GALAXY_HOME/tool_yml_files/bowtie2.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files/bowtie2.yml
+#
+# ADD tool_yml_files/bwa.yml $GALAXY_HOME/tool_yml_files/bwa.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files/bwa.yml
+#
+# ADD tool_yml_files/fastq_groomer.yml $GALAXY_HOME/tool_yml_files/fastq_groomer.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files/fastq_groomer.yml
+#
+# ADD tool_yml_files/fastqc.yml $GALAXY_HOME/tool_yml_files/fastqc.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files/fastqc.yml
+#
+# ADD tool_yml_files/flagstat.yml $GALAXY_HOME/tool_yml_files/flagstat.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files/flagstat.yml
+#
+# ADD tool_yml_files/hisat2.yml $GALAXY_HOME/tool_yml_files/hisat2.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files/hisat2.yml
+#
+# ADD tool_yml_files/tophat2.yml $GALAXY_HOME/tool_yml_files/tophat2.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files/tophat2.yml
+#
+# ADD tool_yml_files/trimmomatic.yml $GALAXY_HOME/tool_yml_files/trimmomatic.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files/trimmomatic.yml
+#
+# ADD tool_yml_files/vilvetoptimiser.yml $GALAXY_HOME/tool_yml_files/vilvetoptimiser.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files/vilvetoptimiser.yml
+#
+# ADD tool_yml_files/fasta_stats.yml $GALAXY_HOME/tool_yml_files/fasta_stats.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files/fasta_stats.yml
+#
+# ADD tool_yml_files/fasta_extract.yml $GALAXY_HOME/tool_yml_files/fasta_extract.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files/fasta_extract.yml
+#
+# ADD tool_yml_files/tophat2-0.9.yml $GALAXY_HOME/tool_yml_files/tophat2-0.9.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files/tophat2-0.9.yml
+#
+# RUN cp $GALAXY_HOME/tool_sheds_conf.xml $GALAXY_ROOT/config/tool_sheds_conf.xml
 
-ADD tool_yml_files/fastqc.yml $GALAXY_HOME/tool_yml_files/fastqc.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/fastqc.yml
+# tool from test toolshed
+# ADD tool_yml_files/differential_count_models-0.28.yml $GALAXY_HOME/tool_yml_files/differential_count_models-0.28.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files/differential_count_models-0.28.yml
 
-ADD tool_yml_files/flagstat.yml $GALAXY_HOME/tool_yml_files/flagstat.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/flagstat.yml
-
-ADD tool_yml_files/hisat2.yml $GALAXY_HOME/tool_yml_files/hisat2.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/hisat2.yml
-
-ADD tool_yml_files/tophat2.yml $GALAXY_HOME/tool_yml_files/tophat2.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/tophat2.yml
-
-ADD tool_yml_files/trimmomatic.yml $GALAXY_HOME/tool_yml_files/trimmomatic.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/trimmomatic.yml
+# tool from test toolshed
+# ADD tool_yml_files/htseq_bams_to_count_matrix-0.5.yml $GALAXY_HOME/tool_yml_files/htseq_bams_to_count_matrix-0.5.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files/htseq_bams_to_count_matrix-0.5.yml
 
 # ADD tool_yml_files/ $GALAXY_HOME/tool_yml_files/
 # RUN install-tools $GALAXY_HOME/tool_yml_files/
-# 
+
 # ADD tool_yml_files/ $GALAXY_HOME/tool_yml_files/
 # RUN install-tools $GALAXY_HOME/tool_yml_files/
+
+# ADD tool_yml_files/ $GALAXY_HOME/tool_yml_files/
+# RUN install-tools $GALAXY_HOME/tool_yml_files/
+
+
+
+# ADD tool_yml_files/ $GALAXY_HOME/tool_yml_files/
+# RUN install-tools $GALAXY_HOME/tool_yml_files/
+
+
 
 ## /////////////  end of install tools from galaxy toolshed  //////////////////
 
@@ -93,5 +136,5 @@ RUN install-tools $GALAXY_HOME/tool_yml_files/trimmomatic.yml
 ##
 ##==============================================================
 ## replace the tool_config.xml file
-ADD tool_conf.xml $GALAXY_ROOT/config/tool_conf.xml
+# ADD tool_conf.xml $GALAXY_ROOT/config/tool_conf.xml
 

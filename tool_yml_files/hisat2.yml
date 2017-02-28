@@ -5,7 +5,7 @@ galaxy_instance: http://localhost:8080
 tools:
 - name: hisat2
   owner: iuc
-  tool_panel_section_label: "DIBBsTools: Mapping"
+  tool_panel_section_label: "Galaxy Tools"
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
   revisions:
           - "1eb21dccc2fa"

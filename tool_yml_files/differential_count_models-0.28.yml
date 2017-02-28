@@ -1,11 +1,11 @@
-# version: 2.0
-# 2 (2015-04-21)
+# version: 0.28
+# 149 (2015-05-04)
 api_key: admin
 galaxy_instance: http://localhost:8080
 tools:
-- name: samtools_flagstat
-  owner: devteam
+- name: differential_count_models
+  owner: fubar
   tool_panel_section_label: "Galaxy Tools"
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
   revisions:
-          - "0072bf593791"
+          - "3107df74056e"

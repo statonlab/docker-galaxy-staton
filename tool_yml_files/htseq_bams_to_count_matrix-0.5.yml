@@ -1,11 +1,11 @@
-# version: 2.0
-# 2 (2015-04-21)
+# version: 0.5
+# 64 (2015-10-13)
 api_key: admin
 galaxy_instance: http://localhost:8080
 tools:
-- name: samtools_flagstat
-  owner: devteam
+- name: htseq_bams_to_count_matrix
+  owner: fubar
   tool_panel_section_label: "Galaxy Tools"
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
   revisions:
-          - "0072bf593791"
+          - "d300bc688e95"
