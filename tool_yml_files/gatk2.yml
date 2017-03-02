@@ -1,0 +1,11 @@
+# version: 2.8.0
+# 5 (2014-08-25)
+api_key: admin
+galaxy_instance: http://localhost:8080
+tools:
+- name: gatk2
+  owner: iuc
+  tool_panel_section_label: "Galaxy Tools"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  revisions:
+          - "84584664264c"

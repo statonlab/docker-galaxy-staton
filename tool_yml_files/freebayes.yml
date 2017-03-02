@@ -1,0 +1,11 @@
+# version: 0.3
+# 2 (2015-04-21)
+api_key: admin
+galaxy_instance: http://localhost:8080
+tools:
+- name: freebayes
+  owner: devteam
+  tool_panel_section_label: "Galaxy Tools"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  revisions:
+          - "6d9407020066"

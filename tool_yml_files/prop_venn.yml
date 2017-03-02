@@ -1,0 +1,11 @@
+# version: 0.5
+# 1 (2012-09-24)
+api_key: admin
+galaxy_instance: http://localhost:8080
+tools:
+- name: prop_venn
+  owner: idot
+  tool_panel_section_label: "Galaxy Tools"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  revisions:
+          - "cc6707a1e044"
