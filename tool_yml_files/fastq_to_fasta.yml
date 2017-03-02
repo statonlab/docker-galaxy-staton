@@ -1,0 +1,10 @@
+# version: 1.0.0
+api_key: admin
+galaxy_instance: http://localhost:8080
+tools:
+- name: fastq_to_fasta
+  owner: devteam
+  tool_panel_section_label: "Galaxy Tools"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  revisions:
+          - "186b8d913e6c"

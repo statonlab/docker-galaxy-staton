@@ -1,0 +1,10 @@
+# version: 2.0.0
+api_key: admin
+galaxy_instance: http://localhost:8080
+tools:
+- name: mirdeep2
+  owner: rnateam
+  tool_panel_section_label: "Galaxy Tools"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  revisions:
+          - "d0faf81ccc99"
