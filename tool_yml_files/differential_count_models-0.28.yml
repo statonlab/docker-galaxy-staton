@@ -6,6 +6,6 @@ tools:
 - name: differential_count_models
   owner: fubar
   tool_panel_section_label: "Galaxy Tools"
-  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
   revisions:
           - "3107df74056e"
