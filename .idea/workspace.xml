@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9799e216-561d-4c4b-9937-e41f8652c10f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool_yml_files/mirdeep2_mapper.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dockerfile" afterPath="$PROJECT_DIR$/Dockerfile" />
     </list>
     <ignored path="docker-galaxy-combined.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,7 +85,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="345" />
+    <option name="x" value="372" />
     <option name="y" value="148" />
     <option name="width" value="1277" />
     <option name="height" value="752" />
@@ -224,15 +222,23 @@
       <option name="presentableId" value="Default" />
       <updated>1488300598067</updated>
       <workItem from="1488300599372" duration="2029000" />
-      <workItem from="1488463147216" duration="1320000" />
+      <workItem from="1488463147216" duration="1369000" />
     </task>
+    <task id="LOCAL-00001" summary="mirdeep2_mapper">
+      <created>1488464518756</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1488464518756</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3349000" />
+    <option name="totallyTimeSpent" value="3398000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="345" y="148" width="1277" height="752" extended-state="0" />
+    <frame x="372" y="148" width="1277" height="752" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23481782" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -265,6 +271,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="mirdeep2_mapper" />
+    <option name="LAST_COMMIT_MESSAGE" value="mirdeep2_mapper" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
