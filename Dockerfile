@@ -169,6 +169,16 @@ RUN install-tools $GALAXY_HOME/tool_yml_files//vilvetoptimiser.yml
 ## /////////////  end of install tools from galaxy toolshed  //////////////////
 
 
+##=========== Install tools with conda =========================
+##
+##==============================================================
+RUN /tool_deps/_conda/bin/conda install -y mirdeep2==2.0.0.8 && \
+    /tool_deps/_conda/bin/conda install -y trinity==2.2.0 && \
+    /tool_deps/_conda/bin/conda install -y snpeff==4.1l && \
+    /tool_deps/_conda/bin/conda install -y freebayes==1.1.0
+
+
+
 
 ##========== replace tool config files =========================
 ##
