@@ -27,6 +27,28 @@ RUN echo "## Add conda bin to $PATH" >> /home/galaxy/.bashrc && \
     sudo -u galaxy ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
 ##========= Section end ==========================
 
+##============ install R-3.2.5 ======================
+##
+##===================================================
+# RUN sudo apt-get install -y software-properties-common && \
+#     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
+#     add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/' && \
+#     sudo apt-get update -y && \
+#     sudo apt-get install -y r-base
+RUN sudo apt-get update && apt-get -y build-dep r-base
+RUN cd /opt && wget https://cran.r-project.org/src/base/R-3/R-3.2.5.tar.gz && \
+    tar xzf R-3.2.5.tar.gz && cd R-3.2.5 && \
+    ./configure --prefix=/opt/R/3.2.5 --enable-R-shlib --with-blas --with-lapack && \
+    make && \
+    sudo make install
+
+##================== Install R packages ========================
+##
+##==============================================================
+COPY ./install-r-packages.R $GALAXY_HOME/
+RUN sudo /opt/R-3.2.5/bin/Rscript $GALAXY_HOME/install-r-packages.R
+
+
 
 ##========= BDSS Tools ===========================
 ## Tools included:
@@ -51,102 +73,100 @@ COPY my_tools/import_workflows/ $GALAXY_ROOT/my_tools/import_workflows/
 RUN pip install bioblend
 
 
-##============ install R-3.2.5 ======================
-##
-##===================================================
-# RUN sudo apt-get install -y software-properties-common && \
-#     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
-#     add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/' && \
-#     sudo apt-get update -y && \
-#     sudo apt-get install -y r-base
-# RUN cd /opt && wget https://cran.r-project.org/src/base/R-3/R-3.2.5.tar.gz && \
-#     tar xzf R-3.2.5.tar.gz && cd R-3.2.5 && \
-#     ./configure --prefix=/opt/R/3.2.5 --enable-R-shlib --with-blas --with-lapack && \
-#     make && \
-#     sudo make install
-
-
 # ## ////////// install tools from galaxy toolshed /////////////////////
-COPY tool_yml_files/abyss.yml $GALAXY_HOME/tool_yml_files/abyss.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/abyss.yml
+COPY tool_yml_files//abyss.yml $GALAXY_HOME/tool_yml_files//abyss.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//abyss.yml
 
-COPY tool_yml_files/bowtie2.yml $GALAXY_HOME/tool_yml_files/bowtie2.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/bowtie2.yml
+COPY tool_yml_files//bowtie2.yml $GALAXY_HOME/tool_yml_files//bowtie2.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//bowtie2.yml
 
-COPY tool_yml_files/bwa.yml $GALAXY_HOME/tool_yml_files/bwa.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/bwa.yml
+COPY tool_yml_files//bwa.yml $GALAXY_HOME/tool_yml_files//bwa.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//bwa.yml
 
-COPY tool_yml_files/cuffdiff-2.2.1.2.yml $GALAXY_HOME/tool_yml_files/cuffdiff-2.2.1.2.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/cuffdiff-2.2.1.2.yml
+# COPY tool_yml_files//cuffdiff-2.2.1.2.yml $GALAXY_HOME/tool_yml_files//cuffdiff-2.2.1.2.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files//cuffdiff-2.2.1.2.yml
 
-COPY tool_yml_files/differential_count_models-0.28.yml $GALAXY_HOME/tool_yml_files/differential_count_models-0.28.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/differential_count_models-0.28.yml
+COPY tool_yml_files//differential_count_models-0.28.yml $GALAXY_HOME/tool_yml_files//differential_count_models-0.28.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//differential_count_models-0.28.yml
 
-COPY tool_yml_files/fasta_extract.yml $GALAXY_HOME/tool_yml_files/fasta_extract.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/fasta_extract.yml
+COPY tool_yml_files//fasta_extract.yml $GALAXY_HOME/tool_yml_files//fasta_extract.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//fasta_extract.yml
 
-COPY tool_yml_files/fasta_stats.yml $GALAXY_HOME/tool_yml_files/fasta_stats.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/fasta_stats.yml
+COPY tool_yml_files//fasta_stats.yml $GALAXY_HOME/tool_yml_files//fasta_stats.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//fasta_stats.yml
 
-COPY tool_yml_files/fastq_groomer.yml $GALAXY_HOME/tool_yml_files/fastq_groomer.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/fastq_groomer.yml
+COPY tool_yml_files//fastq_groomer.yml $GALAXY_HOME/tool_yml_files//fastq_groomer.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//fastq_groomer.yml
 
-COPY tool_yml_files/fastq_to_fasta.yml $GALAXY_HOME/tool_yml_files/fastq_to_fasta.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/fastq_to_fasta.yml
+COPY tool_yml_files//fastq_to_fasta.yml $GALAXY_HOME/tool_yml_files//fastq_to_fasta.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//fastq_to_fasta.yml
 
-COPY tool_yml_files/fastqc.yml $GALAXY_HOME/tool_yml_files/fastqc.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/fastqc.yml
+COPY tool_yml_files//fastqc.yml $GALAXY_HOME/tool_yml_files//fastqc.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//fastqc.yml
 
-COPY tool_yml_files/flagstat.yml $GALAXY_HOME/tool_yml_files/flagstat.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/flagstat.yml
+COPY tool_yml_files//flagstat.yml $GALAXY_HOME/tool_yml_files//flagstat.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//flagstat.yml
 
-COPY tool_yml_files/freebayes.yml $GALAXY_HOME/tool_yml_files/freebayes.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/freebayes.yml
+COPY tool_yml_files//freebayes.yml $GALAXY_HOME/tool_yml_files//freebayes.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//freebayes.yml
 
-COPY tool_yml_files/gatk2.yml $GALAXY_HOME/tool_yml_files/gatk2.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/gatk2.yml
+COPY tool_yml_files//gatk2.yml $GALAXY_HOME/tool_yml_files//gatk2.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//gatk2.yml
 
-COPY tool_yml_files/hisat2.yml $GALAXY_HOME/tool_yml_files/hisat2.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/hisat2.yml
+COPY tool_yml_files//hisat2.yml $GALAXY_HOME/tool_yml_files//hisat2.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//hisat2.yml
 
-COPY tool_yml_files/htseq_bams_to_count_matrix-0.5.yml $GALAXY_HOME/tool_yml_files/htseq_bams_to_count_matrix-0.5.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/htseq_bams_to_count_matrix-0.5.yml
+COPY tool_yml_files//htseq_bams_to_count_matrix-0.5.yml $GALAXY_HOME/tool_yml_files//htseq_bams_to_count_matrix-0.5.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//htseq_bams_to_count_matrix-0.5.yml
 
-COPY tool_yml_files/miraligner.yml $GALAXY_HOME/tool_yml_files/miraligner.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/miraligner.yml
+COPY tool_yml_files//miraligner.yml $GALAXY_HOME/tool_yml_files//miraligner.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//miraligner.yml
 
-COPY tool_yml_files/mirdeep2.yml $GALAXY_HOME/tool_yml_files/mirdeep2.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/mirdeep2.yml
+COPY tool_yml_files//mirdeep2.yml $GALAXY_HOME/tool_yml_files//mirdeep2.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//mirdeep2.yml
 
-COPY tool_yml_files/mirdeep2_mapper.yml $GALAXY_HOME/tool_yml_files/mirdeep2_mapper.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/mirdeep2_mapper.yml
+COPY tool_yml_files//mirdeep2_mapper.yml $GALAXY_HOME/tool_yml_files//mirdeep2_mapper.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//mirdeep2_mapper.yml
 
-COPY tool_yml_files/mirdeep2_quantifier.yml $GALAXY_HOME/tool_yml_files/mirdeep2_quantifier.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/mirdeep2_quantifier.yml
+COPY tool_yml_files//mirdeep2_quantifier.yml $GALAXY_HOME/tool_yml_files//mirdeep2_quantifier.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//mirdeep2_quantifier.yml
 
-COPY tool_yml_files/prop_venn.yml $GALAXY_HOME/tool_yml_files/prop_venn.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/prop_venn.yml
+COPY tool_yml_files//picard.yml $GALAXY_HOME/tool_yml_files//picard.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//picard.yml
 
-COPY tool_yml_files/rgrnastar.yml $GALAXY_HOME/tool_yml_files/rgrnastar.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/rgrnastar.yml
+COPY tool_yml_files//prop_venn.yml $GALAXY_HOME/tool_yml_files//prop_venn.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//prop_venn.yml
 
-COPY tool_yml_files/tophat2-0.9.yml $GALAXY_HOME/tool_yml_files/tophat2-0.9.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/tophat2-0.9.yml
+COPY tool_yml_files//rgrnastar.yml $GALAXY_HOME/tool_yml_files//rgrnastar.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//rgrnastar.yml
 
-COPY tool_yml_files/tophat2.yml $GALAXY_HOME/tool_yml_files/tophat2.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/tophat2.yml
+COPY tool_yml_files//snpeff.yml $GALAXY_HOME/tool_yml_files//snpeff.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//snpeff.yml
 
-COPY tool_yml_files/trimmomatic.yml $GALAXY_HOME/tool_yml_files/trimmomatic.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/trimmomatic.yml
+COPY tool_yml_files//suite_bamtools_2_3_0.yml $GALAXY_HOME/tool_yml_files//suite_bamtools_2_3_0.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//suite_bamtools_2_3_0.yml
 
-COPY tool_yml_files/trinity.yml $GALAXY_HOME/tool_yml_files/trinity.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/trinity.yml
+COPY tool_yml_files//suite_cufflinks_2_2_1.yml $GALAXY_HOME/tool_yml_files//suite_cufflinks_2_2_1.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//suite_cufflinks_2_2_1.yml
 
-COPY tool_yml_files/vilvetoptimiser.yml $GALAXY_HOME/tool_yml_files/vilvetoptimiser.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/vilvetoptimiser.yml
+COPY tool_yml_files//suite_samtools_1_2.yml $GALAXY_HOME/tool_yml_files//suite_samtools_1_2.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//suite_samtools_1_2.yml
+
+# COPY tool_yml_files//tophat2-0.9.yml $GALAXY_HOME/tool_yml_files//tophat2-0.9.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files//tophat2-0.9.yml
+
+COPY tool_yml_files//tophat2.yml $GALAXY_HOME/tool_yml_files//tophat2.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//tophat2.yml
+
+COPY tool_yml_files//trimmomatic.yml $GALAXY_HOME/tool_yml_files//trimmomatic.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//trimmomatic.yml
+
+# COPY tool_yml_files//trinity.yml $GALAXY_HOME/tool_yml_files//trinity.yml
+# RUN install-tools $GALAXY_HOME/tool_yml_files//trinity.yml
+
+COPY tool_yml_files//vilvetoptimiser.yml $GALAXY_HOME/tool_yml_files//vilvetoptimiser.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files//vilvetoptimiser.yml
 ## /////////////  end of install tools from galaxy toolshed  //////////////////
-
-
 
 
 
@@ -162,3 +182,6 @@ RUN install-tools $GALAXY_HOME/tool_yml_files/vilvetoptimiser.yml
 
 COPY my_tools/* $GALAXY_ROOT/my_tools/
 COPY my_workflows $GALAXY_HOME/my_workflows
+
+
+

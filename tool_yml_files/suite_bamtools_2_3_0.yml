@@ -1,9 +1,10 @@
+
 api_key: admin
 galaxy_instance: http://localhost:8080
 tools:
-- name: rgrnastar
-  owner: iuc
-  tool_panel_section_label: "Galaxy Tools"
+- name: suite_bamtools_2_3_0
+  owner: devteam
+  tool_panel_section_label: "BamTools"
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
   revisions:
-          - "ace9f5a2b40f"
+          - "4002835ee765"
