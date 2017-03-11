@@ -3,7 +3,7 @@ galaxy_instance: http://localhost:8080
 tools:
 - name: suite_cufflinks_2_2_1
   owner: devteam
-  tool_panel_section_label: "BamTools"
+  tool_panel_section_label: "Galaxy Tools"
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
   revisions:
           - "e08a6a009088"

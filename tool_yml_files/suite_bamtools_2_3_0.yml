@@ -4,7 +4,7 @@ galaxy_instance: http://localhost:8080
 tools:
 - name: suite_bamtools_2_3_0
   owner: devteam
-  tool_panel_section_label: "BamTools"
+  tool_panel_section_label: "NGS: BamTools"
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
   revisions:
           - "4002835ee765"
