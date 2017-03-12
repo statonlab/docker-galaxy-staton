@@ -1,5 +1,5 @@
 ##========== packages from CRAN ============
-pkgs = c('getopt', 'ggplot2', 'plyr', 'dplyr')
+pkgs = c('getopt', 'ggplot2', 'plyr', 'dplyr', 'ggdendro')
 install.packages(pkgs, repos = "http://cran.us.r-project.org")
 
 source("http://bioconductor.org/biocLite.R")

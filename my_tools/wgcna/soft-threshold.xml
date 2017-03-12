@@ -1,0 +1,43 @@
+<tool id="soft_threshold" name="wgcna soft threshold" version="1.0.0">
+    <description>
+        Calculate R power table and explore optimal beta value
+    </description>
+    <stdio>
+        <regex match="Execution halted"
+               source="both"
+               level="fatal"
+               description="Execution halted."/>
+        <regex match="Error in"
+               source="both"
+               level="fatal"
+               description="An undefined error occured, please check your intput carefully and contact your administrator."/>
+        <regex match="Fatal error"
+               source="both"
+               level="fatal"
+               description="An undefined error occured, please check your intput carefully and contact your administrator."/>
+    </stdio>
+    <requirements>
+        <requirement type="package" version="3.2.1">R</requirement>
+        <requirement type="package" version="1.0.0">wgcna</requirement>
+    </requirements>
+    <command>
+        <![CDATA[
+            /opt/R-3.2.5/bin/Rscript '${__tool_directory__}/soft-threshold.R'
+                -t $threads
+                -f $expressionData
+                -b $betaMaximum
+                -r $rPowerTable
+                -p $scaleFreeFitPlot
+        ]]>
+    </command>
+    <inputs>
+        <param name="threads" type="integer" value="1" label="number of threads for WGCNA"/>
+        <param name="expressionData" type="data" format="csv"
+               label="expression data in csv file format. Rows are samples and columns are genes"/>
+        <param name="betaMaximum" type="integer" value="12" label="maximum beta values"/>
+    </inputs>
+    <outputs>
+        <data format="csv" name="rPowerTable" label="R power table on ${on_string}"/>
+        <data format="pdf" name="scaleFreeFitPlot" label="scale free fit plot on ${on_string}"/>
+    </outputs>
+</tool>

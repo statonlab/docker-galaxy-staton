@@ -1,0 +1,72 @@
+<tool id="soft_connectivity" name="wgcna soft connectivity" version="1.0.0">
+    <description>
+        Calculate soft connectivity from expression data
+    </description>
+    <stdio>
+        <regex match="Execution halted"
+               source="both"
+               level="fatal"
+               description="Execution halted."/>
+        <regex match="Error in"
+               source="both"
+               level="fatal"
+               description="An undefined error occured, please check your intput carefully and contact your administrator."/>
+        <regex match="Fatal error"
+               source="both"
+               level="fatal"
+               description="An undefined error occured, please check your intput carefully and contact your administrator."/>
+    </stdio>
+    <command>
+        <![CDATA[
+            /opt/R-3.2.5/bin/Rscript '${__tool_directory__}/soft_connectivity.R'
+                -t $threads
+                -f $expressionData
+                -b $maxBeta
+                -r $rPowerTableOutput
+                -s $softConnectivityOutput
+                -k $kMostConnectedGenes
+                -h $hclustMethod
+                -c $cutHeight
+                -m $minSize
+                -u $plotColorUnderTree
+                -d $dendrogramOutput
+                -n $kNetworkGenes
+                -p $networkPlot
+        ]]>
+    </command>
+    <inputs>
+        <param name="threads" type="integer" value="2" label="number of threads for WGCNA"/>
+        <param name="expressionData" type="data" format="csv"
+               label="expression data in csv file format. Rows are samples and columns are genes"/>
+        <param name="maxBeta" type="integer" value="12" label="optimal beta values"/>
+        <param name="hclustMethod" type="select"
+               label="The agglomeration method to be used for implementing hierarchical clustering">
+            <option value="single">Single</option>
+            <option value="complete">Complete</option>
+            <option value="average" selected="true">Average</option>
+            <option value="mcquitty">Mcquitty</option>
+            <option value="ward.D">Ward.D</option>
+            <option value="ward.D2">Ward.D2</option>
+            <option value="centroid">Centroid</option>
+            <option value="median">Median</option>
+        </param>
+        <param name="kMostConnectedGenes" type="integer" value="3000" min="2" label="k number of most connected genes"/>
+        <param name="cutHeight" type="float" value="0.95" min="0.1" max="1"
+               label="Height at which branches are to be cut"/>
+        <param name="minSize" type="integer" value="50" min="2"
+               label="minimum number of object on a branch to be considered a cluster"/>
+        <param name="plotColorUnderTree" type="boolean" checked="true"/>
+        <param name="kNetworkGenes" type="integer" value="50" min="10" max="100"
+               label="k number of most connected genes for network plot"/>
+    </inputs>
+    <outputs>
+        <data format="csv" name="rPowerTableOutput" label="R power table"/>
+        <data format="csv" name="softConnectivityOutput" label="Soft Connectivity on ${on_string}"/>
+        <!--
+        <discover_datasets pattern="__designation_and_ext__" directory="softConnectivity" visible="true" />
+        -->
+        <data format="pdf" name="dendrogramOutput" label="Dendrogram Plot on ${on_string}"/>
+        <data format="pdf" name="networkPlot" label="Network plot"/>
+    </outputs>
+</tool>
+
