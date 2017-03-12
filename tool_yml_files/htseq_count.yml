@@ -1,0 +1,11 @@
+## version: 0.6.1galaxy3
+## 24 (2017-01-20)
+api_key: admin
+galaxy_instance: http://localhost:8080
+tools:
+- name: htseq_count
+  owner: lparsons
+  tool_panel_section_label: "Galaxy Tools"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  revisions:
+          - "620d5603d1a8"
