@@ -194,7 +194,7 @@ RUN install-tools $GALAXY_HOME/tool_yml_files/htseq-count.yml
 # RUN cp $GALAXY_HOME/tool_sheds_conf.xml $GALAXY_ROOT/config/tool_sheds_conf.xml
 
 COPY my_tools/* $GALAXY_ROOT/my_tools/
-COPY my_workflows $GALAXY_HOME/my_workflows
+# COPY my_workflows $GALAXY_HOME/my_workflows
 
 
 
