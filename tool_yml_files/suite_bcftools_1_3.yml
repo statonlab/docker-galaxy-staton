@@ -4,7 +4,7 @@ galaxy_instance: http://localhost:8080
 tools:
 - name: suite_bcftools_1_3
   owner: iuc
-  tool_panel_section_label: "NGS: BamTools"
+  tool_panel_section_label: "NGS: BcfTools"
   tool_shed_url: https://toolshed.g2.bx.psu.edu/
   revisions:
           - "95f75ff4dbbc"
