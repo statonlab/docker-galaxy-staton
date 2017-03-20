@@ -12,19 +12,19 @@
             "inputs": [
                 {
                     "description": "", 
-                    "name": "Input Dataset"
+                    "name": "Reads in fastq or FASTA format"
                 }
             ], 
-            "label": null, 
+            "label": "Reads in fastq or FASTA format", 
             "name": "Input dataset", 
             "outputs": [], 
             "position": {
-                "left": 204.609375, 
+                "left": 200, 
                 "top": 200
             }, 
             "tool_errors": null, 
             "tool_id": null, 
-            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_state": "{\"name\": \"Reads in fastq or FASTA format\"}", 
             "tool_version": null, 
             "type": "data_input", 
             "uuid": "87fbbd12-bad2-413d-af97-c6e8fecb7d67", 
@@ -41,12 +41,12 @@
                     "name": "Reference Genome"
                 }
             ], 
-            "label": null, 
+            "label": "Reference Genome", 
             "name": "Input dataset", 
             "outputs": [], 
             "position": {
-                "left": 204.609375, 
-                "top": 285
+                "left": 200, 
+                "top": 302
             }, 
             "tool_errors": null, 
             "tool_id": null, 
@@ -93,7 +93,7 @@
                 }
             ], 
             "position": {
-                "left": 532.609375, 
+                "left": 430, 
                 "top": 367
             }, 
             "post_job_actions": {}, 
@@ -144,7 +144,7 @@
                 }
             ], 
             "position": {
-                "left": 532.609375, 
+                "left": 430, 
                 "top": 200
             }, 
             "post_job_actions": {}, 
@@ -235,7 +235,7 @@
                 }
             ], 
             "position": {
-                "left": 860.609375, 
+                "left": 758, 
                 "top": 200
             }, 
             "post_job_actions": {}, 
@@ -294,7 +294,7 @@
                 }
             ], 
             "position": {
-                "left": 860.609375, 
+                "left": 758, 
                 "top": 617
             }, 
             "post_job_actions": {}, 
@@ -313,5 +313,5 @@
             "workflow_outputs": []
         }
     }, 
-    "uuid": "f0e9d3d9-990a-420c-9c7e-f393eaca2046"
+    "uuid": "b36e702c-33cd-4958-a5d5-37c2698ea8b2"
 }

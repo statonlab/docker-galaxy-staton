@@ -12,10 +12,10 @@
             "inputs": [
                 {
                     "description": "", 
-                    "name": "Input Dataset"
+                    "name": "Sample BAM file"
                 }
             ], 
-            "label": null, 
+            "label": "Sample BAM file", 
             "name": "Input dataset", 
             "outputs": [], 
             "position": {
@@ -24,7 +24,7 @@
             }, 
             "tool_errors": null, 
             "tool_id": null, 
-            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_state": "{\"name\": \"Sample BAM file\"}", 
             "tool_version": null, 
             "type": "data_input", 
             "uuid": "b6640ba3-7172-4b3e-abb8-23398e9938c3", 
@@ -38,10 +38,10 @@
             "inputs": [
                 {
                     "description": "", 
-                    "name": "Input Dataset"
+                    "name": "Reference Genome"
                 }
             ], 
-            "label": null, 
+            "label": "Reference Genome", 
             "name": "Input dataset", 
             "outputs": [], 
             "position": {
@@ -50,7 +50,7 @@
             }, 
             "tool_errors": null, 
             "tool_id": null, 
-            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_state": "{\"name\": \"Reference Genome\"}", 
             "tool_version": null, 
             "type": "data_input", 
             "uuid": "0c99af31-e669-484d-b92a-659b753f8cf5", 
@@ -211,7 +211,7 @@
                 }
             ], 
             "position": {
-                "left": 726, 
+                "left": 758, 
                 "top": 200
             }, 
             "post_job_actions": {}, 
@@ -235,7 +235,7 @@
             "id": 5, 
             "input_connections": {
                 "input": {
-                    "id": 2, 
+                    "id": 3, 
                     "output_name": "output_vcf"
                 }
             }, 
@@ -270,7 +270,7 @@
                 }
             ], 
             "position": {
-                "left": 726, 
+                "left": 758, 
                 "top": 438
             }, 
             "post_job_actions": {}, 
@@ -289,5 +289,5 @@
             "workflow_outputs": []
         }
     }, 
-    "uuid": "bf1d3875-b4ae-48bd-bdbb-599d53565189"
+    "uuid": "2118fd19-d4d4-4fa2-b8bd-1c43a95b718e"
 }

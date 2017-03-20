@@ -12,22 +12,22 @@
             "inputs": [
                 {
                     "description": "", 
-                    "name": "Input Dataset"
+                    "name": "Gene Model (GFF) file"
                 }
             ], 
-            "label": null, 
+            "label": "Gene Model (GFF) file", 
             "name": "Input dataset", 
             "outputs": [], 
             "position": {
                 "left": 200, 
-                "top": 260.125
+                "top": 200
             }, 
             "tool_errors": null, 
             "tool_id": null, 
-            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_state": "{\"name\": \"Gene Model (GFF) file\"}", 
             "tool_version": null, 
             "type": "data_input", 
-            "uuid": "3d08f34b-e52b-4ece-892e-abcfc3016f70", 
+            "uuid": "66ae6129-36aa-482f-9c16-4eda1c069b74", 
             "workflow_outputs": []
         }, 
         "1": {
@@ -38,22 +38,22 @@
             "inputs": [
                 {
                     "description": "", 
-                    "name": "Input Dataset"
+                    "name": "bam/sam file"
                 }
             ], 
-            "label": null, 
+            "label": "bam/sam file", 
             "name": "Input dataset", 
             "outputs": [], 
             "position": {
                 "left": 200, 
-                "top": 345.125
+                "top": 302
             }, 
             "tool_errors": null, 
             "tool_id": null, 
-            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_state": "{\"name\": \"bam/sam file\"}", 
             "tool_version": null, 
             "type": "data_input", 
-            "uuid": "3ae2af94-ce2b-4f02-99a0-7e2b20889f96", 
+            "uuid": "28d220a5-2080-447a-9911-54cbfd4770e5", 
             "workflow_outputs": []
         }, 
         "2": {
@@ -90,7 +90,7 @@
             ], 
             "position": {
                 "left": 430, 
-                "top": 260.125
+                "top": 200
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -104,7 +104,7 @@
             "tool_state": "{\"__page__\": 0, \"feature_type\": \"\\\"exon\\\"\", \"title\": \"\\\"bams to DGE count matrix\\\"\", \"__rerun_remap_job_id__\": null, \"stranded\": \"\\\"false\\\"\", \"gfffile\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"id_attr\": \"\\\"gene_name\\\"\", \"filter_extras\": \"null\", \"samfiles\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"model\": \"\\\"union\\\"\", \"mapqMin\": \"\\\"5\\\"\"}", 
             "tool_version": "0.5", 
             "type": "tool", 
-            "uuid": "00089f41-2666-4a82-9701-853dd0fd911b", 
+            "uuid": "85cb73b9-008b-43f5-ae41-f483279ccb82", 
             "workflow_outputs": []
         }, 
         "3": {
@@ -145,7 +145,7 @@
             ], 
             "position": {
                 "left": 758, 
-                "top": 260.125
+                "top": 200
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -159,7 +159,7 @@
             "tool_state": "{\"doVoom\": \"\\\"F\\\"\", \"fQ\": \"\\\"0.3\\\"\", \"input1\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"DESeq2\": \"{\\\"__current_case__\\\": 1, \\\"doDESeq2\\\": \\\"F\\\"}\", \"title\": \"\\\"Differential Counts\\\"\", \"__page__\": 0, \"useNDF\": \"\\\"false\\\"\", \"__rerun_remap_job_id__\": null, \"fdrthresh\": \"\\\"0.05\\\"\", \"subjectids\": \"\\\"\\\"\", \"fdrtype\": \"\\\"fdr\\\"\", \"Treat_cols\": \"null\", \"edgeR\": \"{\\\"edgeR_priordf\\\": \\\"10\\\", \\\"edgeR_robust_method\\\": \\\"ordinary\\\", \\\"doedgeR\\\": \\\"T\\\", \\\"__current_case__\\\": 0}\", \"control_name\": \"\\\"Control\\\"\", \"treatment_name\": \"\\\"Treatment\\\"\", \"Control_cols\": \"null\"}", 
             "tool_version": "0.28", 
             "type": "tool", 
-            "uuid": "a7acbde7-5ca6-4188-8f8a-78d2d728479d", 
+            "uuid": "6e3d298d-7cc7-4aed-b938-a524277fa9fb", 
             "workflow_outputs": []
         }, 
         "4": {
@@ -200,7 +200,7 @@
             ], 
             "position": {
                 "left": 758, 
-                "top": 488.125
+                "top": 428
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -214,7 +214,7 @@
             "tool_state": "{\"doVoom\": \"\\\"F\\\"\", \"fQ\": \"\\\"0.3\\\"\", \"input1\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"DESeq2\": \"{\\\"DESeq_fitType\\\": \\\"parametric\\\", \\\"__current_case__\\\": 0, \\\"doDESeq2\\\": \\\"T\\\"}\", \"title\": \"\\\"Differential Counts\\\"\", \"__page__\": 0, \"useNDF\": \"\\\"false\\\"\", \"__rerun_remap_job_id__\": null, \"fdrthresh\": \"\\\"0.05\\\"\", \"subjectids\": \"\\\"\\\"\", \"fdrtype\": \"\\\"fdr\\\"\", \"Treat_cols\": \"[]\", \"edgeR\": \"{\\\"doedgeR\\\": \\\"F\\\", \\\"__current_case__\\\": 1}\", \"control_name\": \"\\\"Control\\\"\", \"treatment_name\": \"\\\"Treatment\\\"\", \"Control_cols\": \"[]\"}", 
             "tool_version": "0.28", 
             "type": "tool", 
-            "uuid": "e0baac7b-ba3b-4891-aff8-47eb021924b9", 
+            "uuid": "1e4bde5f-7ba5-4a7d-9bb1-e1eeae07eff5", 
             "workflow_outputs": []
         }, 
         "5": {
@@ -255,7 +255,7 @@
             ], 
             "position": {
                 "left": 1086, 
-                "top": 260.125
+                "top": 200
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -269,9 +269,9 @@
             "tool_state": "{\"__page__\": 0, \"asName1\": \"\\\"A\\\"\", \"asName2\": \"\\\"B\\\"\", \"title\": \"\\\"\\\"\", \"__rerun_remap_job_id__\": null, \"twoThree\": \"{\\\"tt\\\": \\\"three\\\", \\\"inputFile3\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"column3\\\": \\\"0\\\", \\\"__current_case__\\\": 1, \\\"asName3\\\": \\\"C\\\"}\", \"inputFile1\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"inputFile2\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"column2\": \"\\\"0\\\"\", \"column1\": \"\\\"0\\\"\", \"size\": \"\\\"300\\\"\"}", 
             "tool_version": "0.5", 
             "type": "tool", 
-            "uuid": "40e9e94d-6d06-4d6c-a22f-48f3f4cfd2f6", 
+            "uuid": "19509f51-eb45-4090-913b-74df24f0d418", 
             "workflow_outputs": []
         }
     }, 
-    "uuid": "9696c725-8e2f-45cf-ab69-11ec2b37223a"
+    "uuid": "d346056b-eef3-4e40-aba6-7189c3bbfa57"
 }

@@ -178,8 +178,8 @@ RUN /tool_deps/_conda/bin/conda install -y mirdeep2==2.0.0.8 && \
     /tool_deps/_conda/bin/conda install -y freebayes==1.1.0
 
 
-COPY tool_yml_files/htseq-count.yml $GALAXY_HOME/tool_yml_files/htseq-count.yml
-RUN install-tools $GALAXY_HOME/tool_yml_files/htseq-count.yml
+COPY tool_yml_files/htseq_count.yml $GALAXY_HOME/tool_yml_files/htseq_count.yml
+RUN install-tools $GALAXY_HOME/tool_yml_files/htseq_count.yml
 
 COPY tool_yml_files/suite_bcftools_1_3.yml $GALAXY_HOME/tool_yml_files/suite_bcftools_1_3.yml
 RUN install-tools $GALAXY_HOME/tool_yml_files/suite_bcftools_1_3.yml
@@ -196,7 +196,7 @@ RUN install-tools $GALAXY_HOME/tool_yml_files/suite_bcftools_1_3.yml
 #
 # RUN cp $GALAXY_HOME/tool_sheds_conf.xml $GALAXY_ROOT/config/tool_sheds_conf.xml
 
-COPY my_tools/* $GALAXY_ROOT/my_tools/
+ADD my_tools/* $GALAXY_ROOT/my_tools/
 # COPY my_workflows $GALAXY_HOME/my_workflows
 
 
